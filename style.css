@@ -8,7 +8,9 @@
     scroll-behavior: smooth;
     background-color: rgb(0, 0, 0);
 }
-
+img{
+    width: 1000px;
+}
 header {
     background-color: rgb(0, 0, 0);
     width: 100%;
@@ -66,7 +68,6 @@ header {
 .main {
     width: 100%;
     min-height: 100vh;
-    background: url(images/v1016-b-09.jpg) no-repeat;
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -301,5 +302,26 @@ header {
         font-size: 1.4em;
     }
 }
-                                         
+#toggle-button {
+    background-color: #ff0000; 
+    color: white; /
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 1.1em; 
+    font-weight: 500; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+#toggle-button:hover {
+    background-color: #e60000; 
+    transform: scale(1.05); 
+}
+
+#toggle-button:focus {
+    outline: none; 
+}
+                                     
             
