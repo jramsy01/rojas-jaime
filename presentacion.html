@@ -1,17 +1,100 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Presentacion</title>
-    </head>
-    <body>
-        <h1>Presentacion</h1>
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Logo de Google">
-        <p>Hola, mi nombre es Juan Perez y soy un desarrollador web.</p>
-        <p>Tengo 20 años y vivo en Buenos Aires, Argentina.</p>
-        <p>Estoy estudiando programacion en Codo a Codo y me encanta aprender cosas nuevas.</p>
-        <p>Me gusta mucho el futbol y soy hincha de Boca Juniors.</p>
-        <p>Espero que te guste mi presentacion.</p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Jaime Rojas</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Jaime Rojas</a>
+        <nav class="navigation">
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
+            <a href="#more">More About Me</a>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div>
+            <h2>Welcome, my name is Jaime Rojas<br><span>Developer</span></h2>
+            <img src="jaime-rojas.jpeg" alt="Jaime Rojas">
+            <h3>I'm a software development student at Universidad Tecnológica de Panamá</h3>
+        </div>
+    </section>
+
+    <section class="cards" id="about">
+        <h2 class="title">About Me</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="info">
+                    <h3>Programming</h3>
+                    <p>HTML, CSS, JavaScript, PHP.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="info">
+                    <h3>Languages</h3>
+                    <p>I speak English and Spanish.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="info">
+                    <h3>Age</h3>
+                    <p>I'm 21 years old.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's Work Together</h2>
+        <div class="content">
+            <div class="card" style="height: 250px;">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>jramsy.jr@gmail.com</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <div class="info">
+                    <h3>Discord</h3>
+                    <p>ilyjramsy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards" id="more">
+        <h2 class="title">More About Me</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="info">
+                    <h3>Additional Info</h3>
+                    <p>More details about my work, projects, and experiences coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
