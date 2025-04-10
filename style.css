@@ -215,11 +215,11 @@ header {
 
 .more-details {
     text-decoration: none;
-    color: #3a6cf4;
+    color: #ff0000;
 }
 
 .more-details:hover {
-    color: #601cfc;
+    color: #ff0000;
 }
 
 .contact .icon {
@@ -248,7 +248,7 @@ header {
 }
 
 .footer-title span {
-    color: #5e41ff;
+    color: #ff0000;
 }
 
 .footer .social-icons a {

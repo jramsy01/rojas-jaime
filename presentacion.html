@@ -34,7 +34,7 @@
                 </div>
                 <div class="info">
                     <h3>Programming</h3>
-                    <p>HTML, CSS, JavaScript, PHP.</p>
+                    <p>I love to create different designs for my websites.</p>
                 </div>
             </div>
             <div class="card">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="info">
                     <h3>Age</h3>
-                    <p>I'm 21 years old.</p>
+                    <p>I'm 20 years old.</p>
                 </div>
             </div>
         </div>
@@ -91,10 +91,24 @@
                 </div>
                 <div class="info">
                     <h3>Additional Info</h3>
-                    <p>More details about my work, projects, and experiences coming soon!</p>
+                    <p id="extra-info" style="display: none;">I am passionate about technology, programming, and continuous learning. I enjoy working on web development projects and exploring new technologies.</p>
+                    <button id="toggle-button">Show More</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.getElementById("toggle-button").addEventListener("click", function() {
+            var extraInfo = document.getElementById("extra-info");
+            if (extraInfo.style.display === "none") {
+                extraInfo.style.display = "block";
+                this.textContent = "Show Less";
+            } else {
+                extraInfo.style.display = "none";
+                this.textContent = "Show More";
+            }
+        });
+    </script>
 </body>
 </html>
