@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Laboratorio #2</title>
+    <style>
+        .resultados {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: white;
+        }
+        .ejercicio {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .ejercicio h3 {
+            margin-top: 0;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+        .resultado {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container floating">
@@ -12,8 +39,40 @@
         <p>Jaime Rojas</p>
         
         <div class="card">
-            <h2>¡Bienvenido!</h2>
-            <p>Esta es una página interactiva con efectos modernos</p>
+            <h2>¿Qué es Javascript y en qué se asemeja a Java?</h2>
+            <p>Javascript es un lenguaje de programación que se ejecuta en el navegador del usuario. Es un lenguaje interpretado, lo que significa que no necesita ser compilado para ejecutarse. Java, por otro lado, es un lenguaje de programación compilado que se ejecuta en una máquina virtual.</p>
+        </div>
+
+        <div class="resultados">
+            <!-- Ejercicio 1 -->
+            <div class="ejercicio" id="ejercicio1">
+                <h3>Ejercicio 1: Operaciones con var</h3>
+                <div class="resultado" id="resultado1"></div>
+            </div>
+
+            <!-- Ejercicio 2 -->
+            <div class="ejercicio" id="ejercicio2">
+                <h3>Ejercicio 2: Concatenación con let</h3>
+                <div class="resultado" id="resultado2"></div>
+            </div>
+
+            <!-- Ejercicio 3 -->
+            <div class="ejercicio" id="ejercicio3">
+                <h3>Ejercicio 3: Tipo de datos con const</h3>
+                <div class="resultado" id="resultado3"></div>
+            </div>
+
+            <!-- Ejercicio 4 -->
+            <div class="ejercicio" id="ejercicio4">
+                <h3>Ejercicio 4: Objeto con datos del presidente Mulino</h3>
+                <div class="resultado" id="resultado4"></div>
+            </div>
+
+            <!-- Ejercicio 5 -->
+            <div class="ejercicio" id="ejercicio5">
+                <h3>Ejercicio 5: Función contar vocales</h3>
+                <div class="resultado" id="resultado5"></div>
+            </div>
         </div>
 
         <div class="buttons">
@@ -23,6 +82,59 @@
     </div>
 
     <script>
+        // Ejercicio 1: Operaciones con var
+        var numero1 = 10;
+        var numero2 = 5;
+        document.getElementById('resultado1').innerHTML = `
+            Suma: ${numero1 + numero2}<br>
+            Resta: ${numero1 - numero2}<br>
+            Multiplicación: ${numero1 * numero2}<br>
+            División: ${numero1 / numero2}
+        `;
+
+        // Ejercicio 2: Concatenación con let
+        let nombre = "José Raúl";
+        let apellido = "Mulino";
+        document.getElementById('resultado2').innerHTML = `Concatenación: ${nombre} ${apellido}`;
+
+        // Ejercicio 3: Tipo de datos con const
+        const edad = 65;
+        const profesion = "Abogado";
+        document.getElementById('resultado3').innerHTML = `
+            Tipo de edad: ${typeof edad}<br>
+            Tipo de profesion: ${typeof profesion}
+        `;
+
+        // Ejercicio 4: Objeto con datos del presidente Mulino
+        const presidente = {
+            edad: 65,
+            nombre: "José Raúl Mulino",
+            esPresidente: true,
+            datosAdicionales: {
+                partido: "Realizando Metas",
+                cargo: "Presidente de Panamá"
+            }
+        };
+        document.getElementById('resultado4').innerHTML = `
+            Edad: ${presidente.edad}<br>
+            Nombre: ${presidente.nombre}<br>
+            Es Presidente: ${presidente.esPresidente}<br>
+            Partido: ${presidente.datosAdicionales.partido}<br>
+            Cargo: ${presidente.datosAdicionales.cargo}
+        `;
+
+        // Ejercicio 5: Función contar vocales
+        function contarVocales(texto) {
+            const vocales = texto.match(/[aeiouáéíóú]/gi);
+            return vocales ? vocales.length : 0;
+        }
+        
+        const ejemplo = "Desarrollador";
+        document.getElementById('resultado5').innerHTML = `
+            Número de vocales en "${ejemplo}": ${contarVocales(ejemplo)}<br>
+            Número de vocales en "Mulino": ${contarVocales("Mulino")}
+        `;
+
         // Efecto de partículas en el fondo
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.querySelector('.container');
