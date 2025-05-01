@@ -1,0 +1,24 @@
+.problem-container {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #1100ff;
+    border-radius: 5px;
+}
+
+.result {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ed9f9f;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+input {
+    padding: 5px;
+    margin-right: 10px;
+} 

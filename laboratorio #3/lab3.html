@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas de Lógica Matemática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="problem-container">
+        <h2>1. Palíndromo de Doble Base</h2>
+        <input type="number" id="palindromeInput" placeholder="Ingrese un número">
+        <button onclick="verificarPalindromo()">Verificar</button>
+        <div id="palindromeResult" class="result"></div>
+    </div>
+
+    <div class="problem-container">
+        <h2>2. Contador de Caracteres</h2>
+        <input type="text" id="stringInput" placeholder="Ingrese una cadena">
+        <button onclick="contarLetras()">Contar</button>
+        <div id="stringResult" class="result"></div>
+    </div>
+
+    <div class="problem-container">
+        <h2>3. Año Bisiesto</h2>
+        <input type="number" id="yearInput" placeholder="Ingrese un año">
+        <button onclick="verificarBisiesto()">Verificar</button>
+        <div id="leapYearResult" class="result"></div>
+    </div>
+
+    <div class="problem-container">
+        <h2>4. Suma de Números Primos</h2>
+        <input type="number" id="primeInput" placeholder="Ingrese un número (0 < n < 1000000)">
+        <button onclick="sumarPrimos()">Calcular</button>
+        <div id="primeResult" class="result"></div>
+    </div>
+
+    <script type="module">
+        // Palíndromo
+        const palindromo = {
+            verificar: function(n) {
+                const num = n.toString();
+                if (num !== num.split('').reverse().join('')) {
+                    return false;
+                }
+                const binario = n.toString(2);
+                return binario === binario.split('').reverse().join('');
+            }
+        };
+
+    //  Contador
+        const contador = {
+            contar: function(str) {
+                const letras = {};
+                for (const letra of str) {
+                    if (letras[letra]) {
+                        letras[letra]++;
+                    } else {
+                        letras[letra] = 1;
+                    }
+                }
+                return letras;
+            }
+        };
+
+        // Año Bisiesto
+        const bisiesto = {
+            verificar: function(año) {
+                return (año % 4 === 0 && año % 100 !== 0) || (año % 400 === 0);
+            }
+        };
+
+        // Números Primos
+        const primos = {
+            sumar: function(n) {
+                if (n <= 1) return 0;
+                const numeros = new Array(n).fill(true);
+                numeros[0] = false;
+                numeros[1] = false;
+                
+                for (let i = 2; i * i < n; i++) {
+                    if (numeros[i]) {
+                        for (let j = i * i; j < n; j += i) {
+                            numeros[j] = false;
+                        }
+                    }
+                }
+                
+                let suma = 0;
+                for (let i = 2; i < n; i++) {
+                    if (numeros[i]) {
+                        suma += i;
+                    }
+                }
+                return suma;
+            }
+        };
+
+        // Funciones para manejar los botones
+        window.verificarPalindromo = function() {
+            const num = document.getElementById('palindromeInput').value;
+            const resultado = palindromo.verificar(num);
+            document.getElementById('palindromeResult').textContent = 
+                `El número ${num} ${resultado ? 'es' : 'no es'} un palíndromo de doble base.`;
+        };
+
+        window.contarLetras = function() {
+            const texto = document.getElementById('stringInput').value;
+            const resultado = contador.contar(texto);
+            document.getElementById('stringResult').textContent = 
+                `Conteo de caracteres: ${JSON.stringify(resultado)}`;
+        };
+
+        window.verificarBisiesto = function() {
+            const año = document.getElementById('yearInput').value;
+            const resultado = bisiesto.verificar(año);
+            document.getElementById('leapYearResult').textContent = 
+                `El año ${año} ${resultado ? 'es' : 'no es'} bisiesto.`;
+        };
+
+        window.sumarPrimos = function() {
+            const num = document.getElementById('primeInput').value;
+            const resultado = primos.sumar(num);
+            document.getElementById('primeResult').textContent = 
+                `La suma de los números primos debajo de ${num} es: ${resultado}`;
+        };
+    </script>
+</body>
+</html>
