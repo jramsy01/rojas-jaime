@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio #4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Tablas de Multiplicar</h1>
+        <div class="form-group">
+            <label for="num">Ingrese un número (1-20):</label>
+            <input type="number" id="num" min="1" max="20" required>
+            <button onclick="generarTabla()">Generar tabla</button>
+        </div>
+        <div id="tabla"></div>
+    </div>
+
+    <script>
+        function generarTabla() {
+            const num = parseInt(document.getElementById('num').value);
+            if (num < 1 || num > 20) {
+                alert('Por favor ingrese un número entre 1 y 20');
+                return;
+            }
+
+            const tabla = document.getElementById('tabla');
+            tabla.innerHTML = '';
+
+            const tablaHTML = document.createElement('table');
+            const encabezado = document.createElement('thead');
+            const cuerpo = document.createElement('tbody');
+
+            // Crear encabezado de tabla
+            const filaEncabezado = document.createElement('tr');
+            const celda1 = document.createElement('th');
+            const celda2 = document.createElement('th');
+            celda1.textContent = '#';
+            celda2.textContent = 'Resultado';
+            filaEncabezado.appendChild(celda1);
+            filaEncabezado.appendChild(celda2);
+            encabezado.appendChild(filaEncabezado);
+
+            // Crear filas de tabla
+            for (let i = 1; i <= 10; i++) {
+                const fila = document.createElement('tr');
+                const col1 = document.createElement('td');
+                const col2 = document.createElement('td');
+                const colEliminar = document.createElement('td');
+
+                col1.textContent = i;
+                col2.textContent = `${num} x ${i} = ${num * i}`;
+                
+                const btnEliminar = document.createElement('button');
+                btnEliminar.className = 'delete-btn';
+                btnEliminar.textContent = 'Eliminar';
+                btnEliminar.onclick = function() {
+                    fila.remove();
+                };
+                
+                colEliminar.appendChild(btnEliminar);
+                fila.appendChild(col1);
+                fila.appendChild(col2);
+                fila.appendChild(colEliminar);
+                cuerpo.appendChild(fila);
+            }
+
+            tablaHTML.appendChild(encabezado);
+            tablaHTML.appendChild(cuerpo);
+            tabla.appendChild(tablaHTML);
+        }
+    </script>
+</body>
+</html>
