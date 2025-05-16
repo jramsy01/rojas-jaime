@@ -76,3 +76,10 @@ header {
 html {
   scroll-behavior: smooth;
 }
+
+.section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
