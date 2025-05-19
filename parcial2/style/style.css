@@ -97,3 +97,12 @@ button:hover {
 #chk:checked ~ .signup label {
 	transform: scale(.6);
 }
+
+.login form p.password-hint {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-style: italic;
+  text-align: center;
+}
