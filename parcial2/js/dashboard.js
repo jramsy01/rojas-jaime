@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadUserBooksTable();
     loadUserInfoBooksTable();
     updateDashboardCounts();
-    generateRecommendationChart();
   }
+
 
   const addBookForm = document.getElementById('addBookForm');
   if (addBookForm) {
@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const newBook = { title, author, date, pages, recommend };
+
       const booksKey = `books_${currentUser}`;
       const books = JSON.parse(localStorage.getItem(booksKey)) || [];
 
@@ -101,9 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
       loadUserBooksTable();
       loadUserInfoBooksTable();
       updateDashboardCounts();
-      generateRecommendationChart();
     });
   }
+
 
   function showUserInfo() {
     const nameInput = document.getElementById('editUserName');
@@ -129,13 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (displayUserName) displayUserName.textContent = currentUser;
 
+
     const booksKey = `books_${currentUser}`;
     const books = JSON.parse(localStorage.getItem(booksKey)) || [];
     if (bookCountDisplay) bookCountDisplay.textContent = `Books added: ${books.length}`;
 
     loadUserInfoBooksTable();
-    generateRecommendationChart();
   }
+
 
   function loadUserInfoBooksTable() {
     if (!currentUser) return;
@@ -159,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tbody.appendChild(tr);
     });
 
+
     tbody.querySelectorAll('.deleteUserBookBtn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const idx = e.target.getAttribute('data-index');
@@ -167,16 +170,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
   function clearUserBooksTable() {
     const tbody = document.querySelector('#userBooksTable tbody');
     if (tbody) tbody.innerHTML = '';
   }
 
   function updateDashboardCounts() {
+   
     let totalBooks = 0;
     let totalUsers = 0;
-    let totalBooksBorrowed = 0;
+    let totalBooksBorrowed = 0; 
 
+   
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key.startsWith('books_')) {
@@ -191,51 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('totalUsersCount').textContent = totalUsers;
   }
 
-  function generateRecommendationChart() {
-    if (!currentUser) return;
-
-    const booksKey = `books_${currentUser}`;
-    const books = JSON.parse(localStorage.getItem(booksKey)) || [];
-
-    const svg = document.getElementById('booksChart');
-    svg.innerHTML = '';
-
-    const width = svg.getAttribute('width');
-    const height = svg.getAttribute('height');
-
-    const pointSpacing = width / (books.length + 1);
-    const baseY = height - 40;
-
-    let prevX = null;
-    let prevY = null;
-
-    books.forEach((book, index) => {
-      const x = (index + 1) * pointSpacing;
-      const y = book.recommend ? 40 : baseY;
-
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      circle.setAttribute('cx', x);
-      circle.setAttribute('cy', y);
-      circle.setAttribute('r', 6);
-      circle.setAttribute('fill', book.recommend ? 'green' : 'red');
-      svg.appendChild(circle);
-
-      if (prevX !== null && prevY !== null) {
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', prevX);
-        line.setAttribute('y1', prevY);
-        line.setAttribute('x2', x);
-        line.setAttribute('y2', y);
-        line.setAttribute('stroke', 'gray');
-        line.setAttribute('stroke-width', 2);
-        svg.appendChild(line);
-      }
-
-      prevX = x;
-      prevY = y;
-    });
-  }
-
+  
   updateDashboardCounts();
   document.getElementById('dashboard').classList.add('active');
+
+  
 });
