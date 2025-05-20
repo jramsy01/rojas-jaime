@@ -42,7 +42,7 @@
       </section>
 
       <section id="recentBooks" class="section">
-        <h2>📖 Recientemente Subidos</h2>
+        <h2>📖 Recently Added</h2>
         <div id="recentDisplay" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
       </section>
 
@@ -50,77 +50,82 @@
         <h2>Books Section</h2>
 
         <form id="addBookForm">
-          <label for="bookTitle">Título:</label>
+          <label for="bookTitle">Title:</label>
           <input type="text" id="bookTitle" required />
           <br/><br/>
 
-          <label for="bookAuthor">Autor:</label>
+          <label for="bookAuthor">Author:</label>
           <input type="text" id="bookAuthor" required />
           <br/><br/>
 
-          <label for="bookDate">Fecha de lectura:</label>
+          <label for="bookDate">Reading Date:</label>
           <input type="date" id="bookDate" required />
           <br/><br/>
 
-          <label for="bookPages">Número de páginas:</label>
+          <label for="bookPages">Number of Pages:</label>
           <input type="number" id="bookPages" min="1" required />
           <br/><br/>
 
-          <label for="bookRecommend">¿Recomendado?</label>
+          <label for="bookRecommend">Recommended?</label>
           <input type="checkbox" id="bookRecommend" />
           <br/><br/>
 
-          <button type="submit">Agregar Libro</button>
+          <button type="submit">Add Book</button>
         </form>
 
         <table id="booksTable" border="1" cellpadding="5" cellspacing="0" style="margin-top:20px; width:100%; border-collapse: collapse;">
           <thead>
             <tr>
-              <th>Título</th>
-              <th>Autor</th>
-              <th>Fecha de lectura</th>
-              <th>Páginas</th>
-              <th>Recomendado</th>
-              <th>Acción</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Reading Date</th>
+              <th>Pages</th>
+              <th>Recommended</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <!-- Libros se agregan aquí dinámicamente -->
+            <!-- Books will be dynamically added here -->
           </tbody>
         </table>
       </section>
+          <div class="grafica">
+        <h2>📊 Recommended</h2>
+        <svg id="booksChart" width="600" height="200"></svg>
+      </div>
+
 
       <section id="categories" class="section">
         <h2>Categories Section</h2>
-        <p>Contenido de categorías aquí...</p>
+        <p>Categories content here...</p>
       </section>
 
       <section id="user" class="section">
-        <h2>Perfil del Usuario</h2>
+        <h2>User Profile</h2>
         <form id="userForm">
-          <label for="editUserName">👤 Nombre de usuario:</label>
+          <label for="editUserName">👤 Username:</label>
           <input type="text" id="editUserName" required />
           <br><br>
 
-          <label for="newPassword">🔐 Nueva contraseña:</label>
+          <label for="newPassword">🔐 New Password:</label>
           <input type="password" id="newPassword" />
           <br><br>
 
-          <button type="submit">Guardar Cambios</button>
+          <button type="submit">Save Changes</button>
         </form>
 
         <p id="userBookCount" style="margin-top: 10px;"></p>
 
-        <h3>Libros del usuario: <span id="displayUserName"></span></h3>
+        <h3>User's Books: <span id="displayUserName"></span></h3>
         <table id="userBooksTable" border="1" cellpadding="5" cellspacing="0" style="width:100%; border-collapse: collapse; margin-top:10px;">
           <thead>
             <tr>
-              <th>Título</th>
-              <th>Autor</th>
-              <th>Fecha</th>
-              <th>Páginas</th>
-              <th>Recomendado</th>
-              <th>Acciones</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Date</th>
+              <th>Pages</th>
+              <th>Recommended</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
