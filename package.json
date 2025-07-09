@@ -1,0 +1,26 @@
+{
+  "name": "rojas-jaime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jramsy01/rojas-jaime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jramsy01/rojas-jaime/issues"
+  },
+  "homepage": "https://github.com/jramsy01/rojas-jaime#readme",
+  "description": "",
+  "dependencies": {
+    "@fastify/static": "^8.2.0",
+    "dotenv": "^17.1.0",
+    "fastify": "^5.4.0",
+    "mongoose": "^8.16.2"
+  }
+}
